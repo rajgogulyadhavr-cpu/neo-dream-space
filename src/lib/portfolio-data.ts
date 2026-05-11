@@ -79,6 +79,6 @@ export const UIUX = [
 
 export const ACHIEVEMENTS = [
   { title: "3rd Prize — National Hackathon", org: "VCET, Madurai", image: achHack1 },
-  { title: "National Hackathon Recognition", org: "VCET, Madurai", image: achHack2 },
   { title: "Runner-up — Youth Indians Round Table", org: "Accessibility & Health Talk", image: achYouth },
+  { title: "Tamil Nadu Government Award", org: "Centum in Computer Science", image: achHack2 },
 ];
