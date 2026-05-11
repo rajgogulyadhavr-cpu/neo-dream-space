@@ -263,6 +263,7 @@ export function Portfolio() {
               </div>
             </motion.div>
           ))}
+        </div>
       </Section>
 
       {/* Contact */}
