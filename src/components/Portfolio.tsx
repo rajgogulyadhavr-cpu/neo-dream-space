@@ -186,12 +186,7 @@ export function Portfolio() {
                 {i % 4 === 2 && <Palette className="text-[#00b8d4]" size={22} />}
                 {i % 4 === 3 && <Sparkles className="text-[#00b8d4]" size={22} />}
               </div>
-              <p className="font-semibold mb-2">{s.name}</p>
-              <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-                <motion.div initial={{ width: 0 }} whileInView={{ width: `${s.level}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }}
-                  className="h-full rounded-full" style={{ background: "var(--gradient-neon)" }} />
-              </div>
-              <p className="text-xs text-muted-foreground mt-1">{s.level}%</p>
+              <p className="font-semibold">{s.name}</p>
             </motion.div>
           ))}
         </div>
