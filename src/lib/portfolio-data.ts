@@ -40,7 +40,16 @@ export const TIMELINE = [
   { year: "2026", title: "Final Year — Open for opportunities", desc: "Open to internships & full-time AI / UX roles." },
 ];
 
-export const PROJECTS = [
+type Project = {
+  title: string;
+  desc: string;
+  tags: string[];
+  image: string;
+  link?: string;
+  linkLabel?: string;
+};
+
+export const PROJECTS: Project[] = [
   {
     title: "FootGuard",
     desc: "Diabetic foot health AI assistant with computer-vision based foot scan and a multilingual medical chatbot.",
@@ -60,10 +69,12 @@ export const PROJECTS = [
     image: projRobot,
   },
   {
-    title: "AI Farm Leakage Detection",
-    desc: "AI + IoT smart irrigation system that detects water leakage and improves water efficiency.",
-    tags: ["IoT", "AI", "Python"],
-    image: projFoot,
+    title: "Sri Rajalingam Rice Mill — Figma",
+    desc: "Responsive e-commerce UI for a traditional local business, designed end-to-end in Figma with a working interactive prototype.",
+    tags: ["Figma", "UI/UX", "Prototype"],
+    image: ux1,
+    link: "https://twine-pure-42838145.figma.site/",
+    linkLabel: "View Figma Project",
   },
 ];
 
@@ -79,6 +90,6 @@ export const UIUX = [
 
 export const ACHIEVEMENTS = [
   { title: "3rd Prize — National Hackathon", org: "VCET, Madurai", image: achHack1 },
-  { title: "National Hackathon Recognition", org: "VCET, Madurai", image: achHack2 },
   { title: "Runner-up — Youth Indians Round Table", org: "Accessibility & Health Talk", image: achYouth },
+  { title: "Tamil Nadu Government Award", org: "Centum in Computer Science", image: achHack2 },
 ];
