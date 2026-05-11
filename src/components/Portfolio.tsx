@@ -123,22 +123,31 @@ export function Portfolio() {
       <Section id="about" eyebrow="About Me" title="Journey & Background">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass rounded-3xl p-8 neon-glow-soft">
-            <h3 className="text-2xl font-bold mb-3">Know more about me</h3>
+            <div className="flex items-center gap-5 mb-5">
+              <div className="relative shrink-0">
+                <div className="absolute inset-0 rounded-2xl blur-xl bg-[#00f2ff]/40" />
+                <img src={PROFILE_IMG} alt="Rajalingam N portrait" className="relative w-24 h-24 rounded-2xl object-cover ring-2 ring-[#00f2ff]/60 neon-glow-soft" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold leading-tight">Rajalingam N</h3>
+                <p className="text-sm text-[#00b8d4]">Pre-Final Year · B.Tech AI & Data Science</p>
+              </div>
+            </div>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              I'm a final-year <b className="text-foreground">B.Tech AI & Data Science</b> student passionate about
-              Artificial Intelligence, Machine Learning and UI/UX Design. I love building innovative
-              solutions and crafting clean, modern, user-friendly interfaces.
+              Motivated pre-final-year <b className="text-foreground">B.Tech AI &amp; Data Science</b> student at
+              Chettinad College of Engineering &amp; Technology, Karur. Passionate about Artificial Intelligence,
+              Machine Learning and UI/UX Design — building intelligent, user-friendly solutions for real-world problems.
             </p>
             <div className="grid grid-cols-3 gap-3 text-sm">
               <div className="bg-secondary/60 rounded-xl p-3">
                 <p className="text-xs text-muted-foreground">Education</p>
-                <p className="font-semibold">B.Tech AI & DS</p>
-                <p className="text-xs">2022 — 2026</p>
+                <p className="font-semibold">B.Tech AI &amp; DS</p>
+                <p className="text-xs">CGPA 8.45</p>
               </div>
               <div className="bg-secondary/60 rounded-xl p-3">
                 <p className="text-xs text-muted-foreground">Location</p>
-                <p className="font-semibold">Tamil Nadu</p>
-                <p className="text-xs">India</p>
+                <p className="font-semibold">Karur</p>
+                <p className="text-xs">Tamil Nadu, India</p>
               </div>
               <div className="bg-secondary/60 rounded-xl p-3">
                 <p className="text-xs text-muted-foreground">Status</p>
