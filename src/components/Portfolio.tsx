@@ -4,7 +4,7 @@ import {
   Download, Linkedin, Github, Mail, ExternalLink, Figma,
   Sparkles, Code2, Brain, Palette, Trophy, ArrowUpRight, X,
 } from "lucide-react";
-import { LINKS, SKILLS, TIMELINE, PROJECTS, UIUX, ACHIEVEMENTS } from "@/lib/portfolio-data";
+import { LINKS, SKILLS, TIMELINE, PROJECTS, UIUX, ACHIEVEMENTS, PROFILE_IMG } from "@/lib/portfolio-data";
 
 const ROLES = ["AI & Data Science Engineer", "UI/UX Designer", "Creative Problem Solver"];
 
@@ -123,22 +123,31 @@ export function Portfolio() {
       <Section id="about" eyebrow="About Me" title="Journey & Background">
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass rounded-3xl p-8 neon-glow-soft">
-            <h3 className="text-2xl font-bold mb-3">Know more about me</h3>
+            <div className="flex items-center gap-5 mb-5">
+              <div className="relative shrink-0">
+                <div className="absolute inset-0 rounded-2xl blur-xl bg-[#00f2ff]/40" />
+                <img src={PROFILE_IMG} alt="Rajalingam N portrait" className="relative w-24 h-24 rounded-2xl object-cover ring-2 ring-[#00f2ff]/60 neon-glow-soft" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold leading-tight">Rajalingam N</h3>
+                <p className="text-sm text-[#00b8d4]">Pre-Final Year · B.Tech AI & Data Science</p>
+              </div>
+            </div>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              I'm a final-year <b className="text-foreground">B.Tech AI & Data Science</b> student passionate about
-              Artificial Intelligence, Machine Learning and UI/UX Design. I love building innovative
-              solutions and crafting clean, modern, user-friendly interfaces.
+              Motivated pre-final-year <b className="text-foreground">B.Tech AI &amp; Data Science</b> student at
+              Chettinad College of Engineering &amp; Technology, Karur. Passionate about Artificial Intelligence,
+              Machine Learning and UI/UX Design — building intelligent, user-friendly solutions for real-world problems.
             </p>
             <div className="grid grid-cols-3 gap-3 text-sm">
               <div className="bg-secondary/60 rounded-xl p-3">
                 <p className="text-xs text-muted-foreground">Education</p>
-                <p className="font-semibold">B.Tech AI & DS</p>
-                <p className="text-xs">2022 — 2026</p>
+                <p className="font-semibold">B.Tech AI &amp; DS</p>
+                <p className="text-xs">CGPA 8.45</p>
               </div>
               <div className="bg-secondary/60 rounded-xl p-3">
                 <p className="text-xs text-muted-foreground">Location</p>
-                <p className="font-semibold">Tamil Nadu</p>
-                <p className="text-xs">India</p>
+                <p className="font-semibold">Karur</p>
+                <p className="text-xs">Tamil Nadu, India</p>
               </div>
               <div className="bg-secondary/60 rounded-xl p-3">
                 <p className="text-xs text-muted-foreground">Status</p>
@@ -186,12 +195,7 @@ export function Portfolio() {
                 {i % 4 === 2 && <Palette className="text-[#00b8d4]" size={22} />}
                 {i % 4 === 3 && <Sparkles className="text-[#00b8d4]" size={22} />}
               </div>
-              <p className="font-semibold mb-2">{s.name}</p>
-              <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
-                <motion.div initial={{ width: 0 }} whileInView={{ width: `${s.level}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.2 }}
-                  className="h-full rounded-full" style={{ background: "var(--gradient-neon)" }} />
-              </div>
-              <p className="text-xs text-muted-foreground mt-1">{s.level}%</p>
+              <p className="font-semibold">{s.name}</p>
             </motion.div>
           ))}
         </div>
@@ -228,15 +232,15 @@ export function Portfolio() {
 
       {/* UI/UX Gallery */}
       <Section id="uiux" eyebrow="Design Work" title="UI/UX Gallery">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {UIUX.map((u, i) => (
             <motion.button key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
               onClick={() => setModalImg(u.image)}
-              className="glass rounded-2xl overflow-hidden group hover:neon-glow transition-all">
-              <div className="aspect-square overflow-hidden bg-secondary">
-                <img src={u.image} alt={u.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              className="glass rounded-2xl overflow-hidden group hover:neon-glow transition-all text-left">
+              <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                <img src={u.image} alt={u.title} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <p className="p-3 text-xs font-medium text-left">{u.title}</p>
+              <p className="p-3 text-xs font-medium">{u.title}</p>
             </motion.button>
           ))}
         </div>
