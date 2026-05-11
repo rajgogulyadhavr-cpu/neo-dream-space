@@ -232,15 +232,15 @@ export function Portfolio() {
 
       {/* UI/UX Gallery */}
       <Section id="uiux" eyebrow="Design Work" title="UI/UX Gallery">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {UIUX.map((u, i) => (
             <motion.button key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
               onClick={() => setModalImg(u.image)}
-              className="glass rounded-2xl overflow-hidden group hover:neon-glow transition-all">
-              <div className="aspect-square overflow-hidden bg-secondary">
-                <img src={u.image} alt={u.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              className="glass rounded-2xl overflow-hidden group hover:neon-glow transition-all text-left">
+              <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
+                <img src={u.image} alt={u.title} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <p className="p-3 text-xs font-medium text-left">{u.title}</p>
+              <p className="p-3 text-xs font-medium">{u.title}</p>
             </motion.button>
           ))}
         </div>
