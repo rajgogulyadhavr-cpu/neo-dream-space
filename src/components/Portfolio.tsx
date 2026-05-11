@@ -4,7 +4,7 @@ import {
   Download, Linkedin, Github, Mail, ExternalLink, Figma,
   Sparkles, Code2, Brain, Palette, Trophy, ArrowUpRight, X,
 } from "lucide-react";
-import { LINKS, SKILLS, TIMELINE, PROJECTS, UIUX, ACHIEVEMENTS } from "@/lib/portfolio-data";
+import { LINKS, SKILLS, TIMELINE, PROJECTS, UIUX, ACHIEVEMENTS, PROFILE_IMG } from "@/lib/portfolio-data";
 
 const ROLES = ["AI & Data Science Engineer", "UI/UX Designer", "Creative Problem Solver"];
 
