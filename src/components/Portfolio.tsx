@@ -146,6 +146,17 @@ export function Portfolio() {
                 <p className="text-xs">Intern / FT</p>
               </div>
             </div>
+            <div className="flex flex-wrap gap-2 mt-5">
+              <a href={LINKS.resume} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-foreground text-background px-4 py-2 rounded-full text-xs font-medium hover:scale-105 transition-transform">
+                <Download size={14} /> View Resume
+              </a>
+              <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-medium hover:neon-glow-soft transition-all">
+                <Linkedin size={14} /> LinkedIn
+              </a>
+              <a href={LINKS.selfIntro} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-medium hover:neon-glow-soft transition-all">
+                <ExternalLink size={14} /> Self Intro
+              </a>
+            </div>
           </motion.div>
 
           <div className="relative pl-8">
@@ -193,17 +204,22 @@ export function Portfolio() {
             <motion.div key={p.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               whileHover={{ y: -8 }}
               className="glass rounded-3xl overflow-hidden group hover:neon-glow transition-all">
-              <div className="aspect-[16/10] overflow-hidden bg-secondary">
+              <div className="aspect-[16/10] overflow-hidden bg-gradient-to-br from-secondary to-white flex items-center justify-center">
                 <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{p.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{p.desc}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {p.tags.map(t => (
                     <span key={t} className="text-xs px-3 py-1 rounded-full bg-[#00f2ff]/10 text-[#00b8d4] border border-[#00f2ff]/20">{t}</span>
                   ))}
                 </div>
+                {p.link && (
+                  <a href={p.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-[#00b8d4] hover:gap-3 transition-all">
+                    {p.linkLabel ?? "View Project"} <ArrowUpRight size={14} />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
@@ -247,10 +263,6 @@ export function Portfolio() {
               </div>
             </motion.div>
           ))}
-        </div>
-        <div className="mt-6 glass rounded-2xl p-5 text-center">
-          <p className="text-sm"><b>Tamil Nadu Government Award</b> — Centum in Computer Science 🏅</p>
-        </div>
       </Section>
 
       {/* Contact */}
@@ -261,10 +273,10 @@ export function Portfolio() {
             Drop a message — I respond fast.
           </p>
           <div className="grid sm:grid-cols-2 gap-3 mb-8 text-left text-sm">
-            <a href={LINKS.email} className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Mail size={18} className="text-[#00b8d4]" /> rajalingamyadav@gmail.com</a>
-            <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Linkedin size={18} className="text-[#00b8d4]" /> LinkedIn Profile</a>
-            <a href={LINKS.github} target="_blank" rel="noreferrer" className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Github size={18} className="text-[#00b8d4]" /> GitHub</a>
-            <a href={LINKS.figma} target="_blank" rel="noreferrer" className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Figma size={18} className="text-[#00b8d4]" /> Figma Portfolio</a>
+            <a href={LINKS.email} className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Mail size={18} className="text-[#00b8d4]" /><span>rajalingamyadav@gmail.com</span></a>
+            <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Linkedin size={18} className="text-[#00b8d4]" /><span>LinkedIn Profile</span></a>
+            <a href={LINKS.github} target="_blank" rel="noreferrer" className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Github size={18} className="text-[#00b8d4]" /><span>GitHub</span></a>
+            <a href={LINKS.figma} target="_blank" rel="noreferrer" className="bg-secondary/60 hover:bg-secondary rounded-xl p-4 flex items-center gap-3"><Figma size={18} className="text-[#00b8d4]" /><span>Figma Portfolio</span></a>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             <a href={LINKS.resume} target="_blank" rel="noreferrer" className="bg-foreground text-background px-6 py-3 rounded-full font-medium inline-flex items-center gap-2"><Download size={16} /> Download Resume</a>
