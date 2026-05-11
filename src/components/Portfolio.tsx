@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Download, Linkedin as LinkedinIcon, Github as GithubIcon, Mail, ExternalLink,
-  Figma as FigmaIcon, Sparkles, Code2, Brain, Palette, Trophy, ArrowUpRight, X,
+  Download, Linkedin, Github, Mail, ExternalLink, Figma,
+  Sparkles, Code2, Brain, Palette, Trophy, ArrowUpRight, X,
 } from "lucide-react";
 import { LINKS, SKILLS, TIMELINE, PROJECTS, UIUX, ACHIEVEMENTS } from "@/lib/portfolio-data";
 
